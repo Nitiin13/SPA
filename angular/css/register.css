@@ -1,0 +1,112 @@
+.main-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap:10px;
+}
+.reg-container{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 5;
+    display: flex;
+    flex-direction: row;
+     width: 100%;
+     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+/*   border:1px solid black;*/
+
+}
+.register-box{
+    width: 60%;
+    display:flex;
+/*    border:1px solid red;*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+/*    border-radius:10px;*/
+    padding:10px 12px;
+    background-color:#ffffff;
+    border-left:2px solid #D6D6D6;
+}
+.left_part{
+     width:50%;
+     display: block;
+}
+.reg-container .left_part img {
+    width: 400px;
+    height: 400px;
+}
+.register-box h3{
+    align-self: center;
+    color:#211d7f;
+}
+.register-box  input[type="text"]
+{
+  display: block;
+    margin-top:10px;
+/*    height: 35%;*/
+    border: 1px solid #D6D6D6;
+    border-radius: 5px;
+    padding: 5px;
+    width: 400px !important;
+    min-height: 40px !important;
+}
+.register-box input[type="email"]{
+   display: block;
+    margin-top:10px;
+/*    height: 35%;*/
+    border: 1px solid #D6D6D6;
+    border-radius: 5px;
+    padding: 5px;
+    width: 400px !important;
+    min-height: 40px !important;
+    
+}
+.register-box input[type="password"]
+{
+    display: block;
+    margin-top:10px;
+/*    height: 35%;*/
+    border: 1px solid #D6D6D6;
+    border-radius: 5px;
+    padding: 5px;
+    width: 400px !important;
+    min-height: 40px !important;
+}
+
+.register-box #rg-button{
+    margin-top: 20px;
+    padding:10px 12px;
+    width: 30%;
+    border-radius: 5px;
+    background-color:#211d7f;
+    color:white;
+    margin-left: 35%;
+   
+    
+}
+.register-box #rg-button:hover{
+        cursor: pointer;
+        background-color:#8c8cf0;
+}
+@media only screen and (max-width:780px)
+{
+    .reg-container{
+        flex-direction: column;
+        width: 100%;
+    }
+    .register-box
+    {
+        flex-direction: column;
+        width:100%;
+    }
+    .register-box input[type="email"]{
+        height: 30px;
+    }
+    .register-box input[type="password"]
+    {
+        height:30px;
+    }
+    .register-box #rg-button
+    {
+        width:35%;
+    }
+}
