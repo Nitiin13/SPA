@@ -6,7 +6,7 @@ application/cache/*
 
 user_guide/*
 
-application/config/*
+application/config/development
 
 application/logs/*
 !application/logs/index.html
