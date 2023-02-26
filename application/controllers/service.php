@@ -7,20 +7,16 @@
     }
     public function check_Sess()
     {
-         $isloggedIn=$this->session->userdata('isloggedIn');
-        // var_dump($isloggedIn);
-        if(!$isloggedIn)
+        $isloggedIn=$this->session->userdata('isloggedIn');
+        if($isloggedIn==false)
         {
-             redirect('service/');
+            redirect('index/index')
         }
+        // var_dump($isloggedIn);
+       
         
       }
-    public function index(){
-      // $this->check_Sess();
-        // $this->load->view('templates/header');
-        $this->load->view('angular/index.html');
-        // $this->load->view('templates/footer');
-    }    
+   
 
     public function usertickets()
     {
@@ -48,9 +44,8 @@
     {
         $this->session->unset_userdata('isloggedIn');
         $this->session->unset_userdata();
-  
+        // $this->session->unset_userdata(); 
         $this->session->sess_destroy();
-    
         echo true;
     }
     public function register()
@@ -82,8 +77,9 @@
                                 'isloggedIn'=>TRUE);
                         $this->session->set_userdata($session_array);
                 //         $role=$this->session->userdata('ses_role');
-                // $this->output->set_content_type('application/json')->set_output(json_encode($role)); 
-                echo true;
+                // $this->output->set_content_type('application/json')->set_output(json_encode($role));
+                echo json_encode($session_array); 
+                return true;
             }
             else
             {
@@ -116,6 +112,7 @@
     }
     public function ticket_add()
     {
+        $this->check_Sess();
             $req=json_decode(file_get_contents('php://input'),true);
             $title=$req['title'];
             $desc=$req['desc']; 

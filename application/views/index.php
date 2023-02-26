@@ -9,11 +9,12 @@
  <link rel="stylesheet" href="angular/css/login-page.css">
  <link rel="stylesheet" href="angular/css/nav.css">
  <link rel="stylesheet" href="angular/css/register.css">
+ <link rel="stylesheet" href="angular/css/ticket_portal.css">
  <base href="http://localhost/SPA/">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </head>
         <body>
-            <header ng-controller="headerController">
+            <header  ng-init="session='<?php echo $session ?>'">
                 <div class="navbar">
                     <div class="logo-container"><img ng-src="angular/assets/logo.png"  alt="logo"></div>
                     <div class="nav-links">
@@ -22,7 +23,7 @@
                     <a ui-sref="#about">About</a>
                     <a ui-sref="#portfolio">Portfolio</a>
                     <a ui-sref="SignUp">SignUp</a>
-                    <a ng-if="isLoggedIn" ui-sref="#logout">Logout</a>
+                    <a ng-if="((session!='0')||(isLoggedIn != null))" ng-controller='logoutController' ui-sref="logout">Logout</a>
                     <!-- </ul> -->
                 </div>
             </div>

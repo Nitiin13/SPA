@@ -1,0 +1,140 @@
+*{
+    box-sizing: border-box;
+}
+body
+{
+    margin: 0;
+    top:0;
+
+}
+.container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    column-gap:10px;
+}
+
+.main-div{
+    display: block;
+    grid-column-start:4;
+    grid-column-end:6;
+    grid-row-start:1;
+}
+.ticket_portal
+{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    height:450px !important;
+       width:75%;
+    padding: 12px 24px;
+    margin-top:10px;
+    border-radius: 10px;
+     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+/*    border: 1px solid black;*/
+/*     box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25);*/
+    background-color: #ffffff;
+}
+.ticket_portal h2{
+    align-self: center;
+}
+.ticket_portal input[type="text"]{
+ display: block;
+    margin-top:10px;
+/*    height: 35%;*/
+    border: 1px solid #D6D6D6;
+    border-radius: 5px;
+    padding: 5px;
+    width: 600px !important;
+/*    min-height: 2.8125rem !important;*/
+min-height: 40px !important;
+}
+.ticket_portal textarea
+{
+     display: block;
+    margin-top:10px;
+/*    height: 35%;*/
+    border: 1px solid #D6D6D6;
+    border-radius: 5px;
+    padding: 5px;
+    width: 600px !important;
+/*    min-height: 2.8125rem !important;*/
+min-height: 120px !important;
+    padding-left: 15px;
+    line-height: 1em;
+    resize: none;
+    font-family: Arial;
+    
+    
+}
+.ticket_portal #attachment{
+    display: block;
+}
+.ticket_portal #btn
+{
+  
+    background-color:darkblue;
+    color:white;
+    border-radius: 3px;
+    width:30%;
+    padding:12px 14px;
+    margin-top:15px;
+    float:right;
+        
+}
+.tabular-data
+{
+    display: block;
+    grid-column-start:4;
+    grid-row-start: 10;
+
+}
+.tabular-data .styled-table1 {
+
+ width: 700px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    
+/*   box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);*/
+}
+.styled-table1 thead tr {
+    background-color:  #211d7f;
+    color: #ffffff;
+    text-align: center;
+}
+.styled-table1 th,
+.styled-table1 td {
+    text-align: center;
+    padding: 12px 15px;
+}
+.styled-table1 tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table1 tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table1 tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+@media only screen and (max-width:780px){
+ 
+    .main-div{
+        width: 100%;
+    }
+    .main-div button{
+        width:100%;
+
+    }
+    .ticket_portal{
+        width:75%;
+    }
+    .ticket_portal input[type="text"]{
+        width:65% !important;
+        height:20px;
+    }
+    .main-div input[type="textarea"]
+{
+    width: 50%;
+}
+} 

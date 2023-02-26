@@ -6,6 +6,15 @@
     //    $this->load->model('servicemodel');
    }
     public function index(){
-        $this->load->view('index');
+        $sess=$this->session->userdata('isloggedIn');
+        // var_dump($sess);
+        if($sess)
+        {
+         $data['session']=$this->session->userdata('isloggedIn');
+        }
+        else{
+            $data['session']='0';
+        }
+        $this->load->view('index',$data);
     }
 }
